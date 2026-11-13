@@ -30,14 +30,22 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
+/.angular/
 /.angular/cache
 .sass-cache/
+*.tsbuildinfo
 /connect.lock
 /coverage
 /libpeerconnection.log
 testem.log
 /typings
 __screenshots__/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.local
 
 # System files
 .DS_Store
