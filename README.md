@@ -1,59 +1,183 @@
-# InnovacionGubernamentalEcatepec
+<div align="center">
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.7.
+<img src="mockup/assets/logo-ecatepec.png" alt="Innovación Gubernamental Ecatepec" width="280" />
 
-## Development server
+# Innovación Gubernamental Ecatepec
 
-To start a local development server, run:
+**Sitio web de difusión para el área de Innovación Gubernamental del Palacio Municipal de Ecatepec, San Cristóbal.**
+
+<p>
+  <img src="https://img.shields.io/badge/Angular-22-DD0031?logo=angular&logoColor=white" alt="Angular 22" />
+  <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript 6" />
+  <img src="https://img.shields.io/badge/Estado-En%20desarrollo-9F2241" alt="Estado" />
+  <img src="https://img.shields.io/badge/UVEG-Proyecto%20acad%C3%A9mico-1C0D12" alt="UVEG" />
+</p>
+
+</div>
+
+---
+
+## 📌 Descripción
+
+**Innovación Gubernamental Ecatepec** es un proyecto web que concentra y difunde la información del área de **Innovación Gubernamental del Palacio de Ecatepec**, ubicado en **San Cristóbal**.
+
+El sitio integra contenidos de distintos medios —incluidas redes sociales como **TikTok** y **Facebook**— para que la ciudadanía encuentre en un solo lugar los programas, proyectos, convocatorias y noticias de la dependencia, sin tener que buscar entre varias plataformas.
+
+> La información se presenta con una identidad visual institucional, accesible desde cualquier dispositivo y con navegación clara.
+
+## 🎯 Objetivo
+
+- Centralizar la información oficial del área de Innovación Gubernamental.
+- Ampliar el alcance de las publicaciones que hoy viven en redes sociales.
+- Facilitar el acceso de la ciudadanía a programas, convocatorias y resultados.
+- Dar una imagen moderna, ordenada y confiable a la dependencia.
+
+## ✨ Funcionalidades
+
+| Sección | Descripción |
+| --- | --- |
+| 🏠 **Inicio** | Presentación del área y accesos rápidos a los programas. |
+| 📊 **Indicadores** | Cifras de programas, ciudadanos atendidos y dependencias conectadas. |
+| 🧩 **Programas** | Gobierno digital, datos abiertos, laboratorio de ideas y participación ciudadana. |
+| 🚀 **Proyectos** | Iniciativas en marcha con resultados medibles. |
+| 📰 **Noticias** | Convocatorias y avances del programa. |
+| 📱 **Redes sociales** | Contenido de TikTok y Facebook integrado al sitio. |
+| 📬 **Contacto** | Medios oficiales de atención ciudadana. |
+
+## 📱 Integración de redes sociales
+
+| Plataforma | Uso dentro del sitio | Estado |
+| --- | --- | --- |
+| **TikTok** | Difusión de videos cortos y campañas de la dependencia. | 🔄 Planeado |
+| **Facebook** | Publicaciones, transmisiones y avisos oficiales. | 🔄 Planeado |
+
+**Enfoque técnico previsto**
+
+- Incrustación de publicaciones mediante los embeds oficiales de cada plataforma.
+- Uso de la API de Facebook Graph únicamente del lado del servidor.
+- Las credenciales y tokens **nunca** se suben al repositorio (se manejan con variables de entorno).
+- Solo se muestran cuentas oficiales verificadas.
+
+## 🛠️ Stack tecnológico
+
+- **Angular 22** — framework principal (standalone components, signals).
+- **TypeScript 6** — tipado estricto.
+- **Vitest** — pruebas unitarias.
+- **Prettier** — formato de código.
+- **HTML + CSS puro** en el mockup de diseño, sin dependencias externas.
+
+## 📁 Estructura del proyecto
+
+```text
+innovacion_gubernamental_ecatepec/
+├── mockup/                  # Prototipo navegable del sitio
+│   ├── index.html           # Estructura y contenido
+│   ├── styles.css           # Sistema de diseño (tokens de color, tipografía)
+│   └── assets/              # Logotipos e imágenes
+├── public/                  # Recursos estáticos de Angular
+├── src/
+│   ├── app/
+│   │   ├── app.ts           # Componente raíz
+│   │   ├── app.html
+│   │   ├── app.routes.ts    # Rutas de la aplicación
+│   │   └── app.config.ts
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.css
+├── angular.json
+├── package.json
+└── README.md
+```
+
+> **Nota:** el repositorio incluye el mockup completo y funcional en `mockup/`. La migración de ese diseño a componentes de Angular está en curso.
+
+## 🚀 Cómo ejecutarlo
+
+### Requisitos
+
+- [Node.js](https://nodejs.org/) 20 o superior
+- npm 11 o superior
+
+### Instalación
 
 ```bash
+git clone https://github.com/ulisesgezx/innovacion_gubernamental_ecatepec.git
+cd innovacion_gubernamental_ecatepec
+npm install
+```
+
+### Servidor de desarrollo
+
+```bash
+npm start
+# o
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abre `http://localhost:4200/`. La aplicación se recarga automáticamente al guardar cambios.
 
-## Code scaffolding
+### Ver el mockup
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+No necesita instalación: abre `mockup/index.html` directamente en el navegador.
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Compilar para producción
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
+Los archivos quedan en `dist/`.
 
-To build the project run:
+### Pruebas
 
 ```bash
-ng build
+npm test
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🎨 Diseño
 
-## Running unit tests
+El sistema de diseño vive en `mockup/styles.css` y se controla con variables CSS:
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+| Variable | Valor | Uso |
+| --- | --- | --- |
+| `--wine` | `#9F2241` | Color institucional principal |
+| `--wine-dark` | `#7A1732` | Estados hover y énfasis |
+| `--gold` | `#D9A441` | Acento y llamadas a la acción |
+| `--plum` | `#1C0D12` | Fondos oscuros |
+| `--cream` | `#F7F3F2` | Fondo general |
+| `--ink` | `#241318` | Texto principal |
 
-```bash
-ng test
-```
+Tipografías: **Sora** para títulos e **Inter** para texto corrido.
 
-## Running end-to-end tests
+## 🗺️ Roadmap
 
-For end-to-end (e2e) testing, run:
+- [x] Mockup navegable y responsive
+- [x] Sistema de diseño con paleta institucional
+- [ ] Migración del mockup a componentes de Angular
+- [ ] Integración de TikTok y Facebook
+- [ ] Panel de administración de noticias y convocatorias
+- [ ] Accesibilidad AA y pruebas en dispositivos reales
+- [ ] Despliegue en producción
 
-```bash
-ng e2e
-```
+## 👤 Autor
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+**Ulises Gutiérrez Gómez** · [@ulisesgezx](https://github.com/ulisesgezx)
 
-## Additional Resources
+## 🎓 Contexto académico
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Proyecto desarrollado en el marco de los estudios en la
+**[Universidad Virtual del Estado de Guanajuato (UVEG)](https://www.uveg.edu.mx/)**,
+aplicando conocimientos de desarrollo web al servicio de una necesidad real de difusión institucional.
+
+## 🏛️ Institución
+
+**Gobierno de Ecatepec** · Área de Innovación Gubernamental
+Palacio Municipal, San Cristóbal, Ecatepec de Morelos, Estado de México.
+
+---
+
+<div align="center">
+
+Hecho con 💜 para acercar el gobierno a la gente.
+
+</div>

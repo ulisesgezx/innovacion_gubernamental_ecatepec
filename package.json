@@ -9,6 +9,7 @@
     "test": "ng test"
   },
   "private": true,
+  "author": "Ulises Gutiérrez Gómez",
   "packageManager": "npm@11.20.0",
   "dependencies": {
     "@angular/common": "^22.2.0",
