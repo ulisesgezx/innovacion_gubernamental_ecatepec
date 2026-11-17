@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Innovación Gubernamental · Ecatepec</title>
+  <meta name="description" content="Mockup del sitio de Innovación Gubernamental de Ecatepec: programas, proyectos y participación ciudadana." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ============ TOKENS ============ */
+    :root {
+      --navy: #07131f;
+      --navy-2: #0c2133;
+      --teal: #0e8074;
+      --mint: #3ddc97;
+      --coral: #ff7a59;
+      --cream: #f6f4ee;
+      --paper: #ffffff;
+      --ink: #0b1a26;
+      --muted: #5a6b7a;
+      --line: #e3e9ee;
+      --radius: 18px;
+      --radius-sm: 12px;
+      --shadow: 0 18px 44px -26px rgba(11, 26, 38, 0.42);
+      --shadow-lg: 0 30px 70px -30px rgba(11, 26, 38, 0.5);
+      --max: 1180px;
+      --font-display: "Sora", "Segoe UI", system-ui, sans-serif;
+      --font-ui: "Inter", "Segoe UI", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-ui);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0;
+      text-wrap: balance;
+    }
+
+    p { margin: 0; }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      width: min(100% - 2.5rem, var(--max));
+      margin-inline: auto;
+    }
+
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      background: var(--mint);
+      color: var(--navy);
+      padding: 0.75rem 1.25rem;
+      font-weight: 700;
+      z-index: 200;
+    }
+    .skip:focus { left: 1rem; top: 1rem; }
+
+    :focus-visible {
+      outline: 3px solid var(--mint);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* ============ HEADER ============ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(246, 244, 238, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(11, 26, 38, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(140deg, var(--teal), var(--mint));
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.03em;
+      box-shadow: 0 8px 18px -8px rgba(14, 128, 116, 0.8);
+    }
+
+    .brand-text { display: grid; line-height: 1.15; }
+    .brand-text strong {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+    }
+    .brand-text span {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: #24394a;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .nav-links a:hover { background: rgba(14, 128, 116, 0.1); color: var(--teal); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.15rem;
+      border-radius: 999px;
+      background: var(--navy);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .nav-cta:hover { background: var(--teal); transform: translateY(-1px); }
+
+    .nav-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 12px;
+      padding: 0.55rem 0.7rem;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(3rem, 7vw, 6rem) 0 clamp(3.5rem, 8vw, 6.5rem);
+      background:
+        radial-gradient(1200px 500px at 85% -10%, rgba(61, 220, 151, 0.22), transparent 60%),
+        radial-gradient(900px 420px at 10% 10%, rgba(14, 128, 116, 0.18), transparent 55%),
+        var(--cream);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(11, 26, 38, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 26, 38, 0.045) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(circle at 50% 40%, #000 10%, transparent 72%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(14, 128, 116, 0.1);
+      border: 1px solid rgba(14, 128, 116, 0.22);
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1.4rem;
+    }
+    .eyebrow .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 4px rgba(14, 128, 116, 0.15);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5.2vw, 4.1rem);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--teal);
+      position: relative;
+      white-space: nowrap;
+    }
+    .hero h1 em::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0.06em;
+      height: 0.34em;
+      background: linear-gradient(90deg, rgba(61, 220, 151, 0.55), rgba(61, 220, 151, 0.12));
+      border-radius: 6px;
+      z-index: -1;
+    }
+
+    .hero p.lead {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: #3c4d5c;
+      max-width: 34rem;
+      margin-bottom: 2rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 1.5rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+      box-shadow: 0 16px 30px -18px rgba(7, 19, 31, 0.9);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 22px 36px -18px rgba(7, 19, 31, 0.95); }
+    .btn-ghost {
+      background: #fff;
+      border-color: rgba(11, 26, 38, 0.14);
+      color: var(--ink);
+    }
+    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+
+    .btn svg { flex: none; }
+
+    /* Tarjeta visual del hero */
+    .hero-visual { position: relative; min-height: 360px; }
+
+    .panel {
+      background: #fff;
+      border: 1px solid rgba(11, 26, 38, 0.08);
+      border-radius: 22px;
+      box-shadow: var(--shadow-lg);
+      padding: 1.4rem;
+    }
+
+    .panel-main { position: relative; z-index: 2; }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+    }
+    .panel-head span {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .panel-head .badge {
+      font-size: 0.68rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(61, 220, 151, 0.18);
+      color: #0a6b4a;
+      letter-spacing: 0.06em;
+    }
+
+    .metric {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+    }
+    .metric small { font-size: 0.95rem; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+
+    .bars { display: grid; gap: 0.75rem; margin-top: 1.4rem; }
+    .bar-row { display: grid; gap: 0.35rem; }
+    .bar-row span { font-size: 0.78rem; color: var(--muted); display: flex; justify-content: space-between; }
+    .bar {
+      height: 8px;
+      border-radius: 999px;
+      background: #eef2f5;
+      overflow: hidden;
+    }
+    .bar i {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--teal), var(--mint));
+    }
+
+    .panel-float {
+      position: absolute;
+      z-index: 3;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 18px;
+      padding: 1rem 1.15rem;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      max-width: 250px;
+    }
+    .panel-float .icon-chip {
+      width: 38px; height: 38px; border-radius: 11px;
+      display: grid; place-items: center;
+      background: rgba(61, 220, 151, 0.16);
+      color: var(--mint);
+      flex: none;
+    }
+    .panel-float strong { display: block; font-size: 0.88rem; font-family: var(--font-display); }
+    .panel-float small { color: rgba(255, 255, 255, 0.62); font-size: 0.72rem; }
+
+    .float-a { top: -1.4rem; right: -0.6rem; }
+    .float-b { bottom: -1.6rem; left: -0.8rem; }
+
+    /* ============ STATS ============ */
+    .stats {
+      border-top: 1px solid rgba(11, 26, 38, 0.08);
+      border-bottom: 1px solid rgba(11, 26, 38, 0.08);
+      background: #fff;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-left: 1px solid var(--line);
+    }
+    .stat:first-child { border-left: 0; }
+    .stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      letter-spacing: -0.03em;
+      color: var(--navy);
+    }
+    .stat span {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+    }
+
+    /* ============ SECCIONES ============ */
+    section { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+      flex-wrap: wrap;
+    }
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+      font-weight: 700;
+      max-width: 22ch;
+    }
+    .section-head p {
+      color: var(--muted);
+      max-width: 34ch;
+      font-size: 0.95rem;
+    }
+    .kicker {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.75rem;
+    }
+
+    .cards-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.15rem;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid rgba(11, 26, 38, 0.08);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      box-shadow: 0 2px 0 rgba(11, 26, 38, 0.02);
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: rgba(14, 128, 116, 0.35);
+    }
+
+    .icon-box {
+      width: 46px; height: 46px;
+      border-radius: 13px;
+      display: grid; place-items: center;
+      background: linear-gradient(140deg, rgba(14, 128, 116, 0.14), rgba(61, 220, 151, 0.16));
+      color: var(--teal);
+      margin-bottom: 0.35rem;
+    }
+
+    .card h3 { font-size: 1.05rem; font-weight: 600; }
+    .card p { font-size: 0.88rem; color: var(--muted); }
+    .card .more {
+      margin-top: auto;
+      padding-top: 0.6rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .card:hover .more svg { transform: translateX(3px); }
+    .card .more svg { transition: transform 0.2s ease; }
+
+    /* ============ PROYECTOS ============ */
+    .projects { background: #fff; }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+
+    .project {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(11, 26, 38, 0.08);
+      background: #fff;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .project:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+    .thumb {
+      height: 190px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    .thumb::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px);
+      background-size: 34px 34px;
+      opacity: 0.7;
+    }
+    .thumb svg { position: relative; opacity: 0.92; }
+    .t1 { background: linear-gradient(140deg, #0b3b4a, #0e8074 60%, #3ddc97); }
+    .t2 { background: linear-gradient(140deg, #1e2440, #3f3d8f 55%, #8b7bef); }
+    .t3 { background: linear-gradient(140deg, #4a1f26, #b5443a 55%, #ff9a7a); }
+
+    .project-body { padding: 1.4rem; display: flex; flex-direction: column; gap: 0.55rem; }
+    .tag {
+      align-self: flex-start;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(14, 128, 116, 0.1);
+      color: var(--teal);
+    }
+    .project-body h3 { font-size: 1.15rem; font-weight: 600; }
+    .project-body p { font-size: 0.88rem; color: var(--muted); }
+
+    /* ============ CTA ============ */
+    .cta {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 28px;
+      padding: clamp(2.5rem, 5vw, 4rem);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .cta::after {
+      content: "";
+      position: absolute;
+      width: 420px; height: 420px;
+      right: -120px; top: -140px;
+      background: radial-gradient(circle, rgba(61, 220, 151, 0.35), transparent 65%);
+      pointer-events: none;
+    }
+    .cta h2 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); margin-bottom: 0.9rem; }
+    .cta p { color: rgba(255, 255, 255, 0.7); max-width: 46ch; }
+    .cta .actions { position: relative; z-index: 1; justify-content: flex-end; }
+    .btn-mint {
+      background: var(--mint);
+      color: #062018;
+    }
+    .btn-mint:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -18px rgba(61, 220, 151, 0.9); }
+    .btn-outline-light {
+      border-color: rgba(255, 255, 255, 0.28);
+      color: #fff;
+      background: transparent;
+    }
+    .btn-outline-light:hover { background: rgba(255, 255, 255, 0.08); }
+
+    /* ============ NOTICIAS ============ */
+    .news-list { display: grid; gap: 0.9rem; }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      gap: 1.4rem;
+      align-items: center;
+      padding: 1.25rem 1.4rem;
+      background: #fff;
+      border: 1px solid rgba(11, 26, 38, 0.08);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .news-item:hover { border-color: var(--teal); transform: translateX(4px); }
+
+    .news-date {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.82rem;
+      color: var(--teal);
+      display: grid;
+      gap: 0.1rem;
+    }
+    .news-date span { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+    .news-item h3 { font-size: 1rem; font-weight: 600; }
+    .news-item p { font-size: 0.85rem; color: var(--muted); }
+    .news-item > svg { color: var(--muted); }
+
+    /* ============ FOOTER ============ */
+    .site-footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.72);
+      padding: 3.5rem 0 1.5rem;
+      margin-top: clamp(3rem, 6vw, 5rem);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .site-footer .brand-text strong { color: #fff; }
+    .site-footer .brand-text span { color: rgba(255, 255, 255, 0.5); }
+    .site-footer .about { font-size: 0.86rem; margin-top: 1rem; max-width: 30ch; color: rgba(255,255,255,0.6); }
+    .footer-col h4 {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+    .footer-col a { text-decoration: none; font-size: 0.86rem; color: rgba(255,255,255,0.66); }
+    .footer-col a:hover { color: var(--mint); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: 1.5rem;
+      font-size: 0.76rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* ============ REVEAL ============ */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1000px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { max-width: 520px; }
+      .cards-4 { grid-template-columns: repeat(2, 1fr); }
+      .cards-3 { grid-template-columns: 1fr; }
+      .cta { grid-template-columns: 1fr; }
+      .cta .actions { justify-content: flex-start; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 780px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: inline-flex; }
+      .site-header.open .nav-links {
+        display: flex;
+        position: absolute;
+        top: 76px; left: 0; right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem 1.25rem 1.4rem;
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+        gap: 0.25rem;
+      }
+      .site-header.open .nav-links a { padding: 0.75rem 0.9rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(3) { border-left: 0; }
+      .stat:nth-child(n + 3) { border-top: 1px solid var(--line); }
+      .news-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .news-item > svg { display: none; }
+      .float-a { top: -1rem; right: 0; }
+      .float-b { display: none; }
+      .hero-visual { min-height: 0; }
+    }
+
+    @media (max-width: 560px) {
+      .cards-4 { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .actions .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="header">
+    <div class="wrap">
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="brand" href="#inicio" aria-label="Innovación Gubernamental Ecatepec, inicio">
+          <span class="brand-mark" aria-hidden="true">IG</span>
+          <span class="brand-text">
+            <strong>Innovación Gubernamental</strong>
+            <span>Ecatepec de Morelos</span>
+          </span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#programas">Programas</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#noticias">Noticias</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+        <a class="nav-cta" href="#contacto">
+          Reporta una idea
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Gobierno digital · Ecatepec</span>
+          <h1>Innovación que <em>transforma</em> Ecatepec</h1>
+          <p class="lead">
+            Programas, datos y herramientas para acercar el gobierno a la gente.
+            Diseñamos soluciones públicas con tecnología, transparencia y participación ciudadana.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#programas">
+              Conoce los programas
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="panel-float float-a">
+            <span class="icon-chip">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
+            </span>
+            <span>
+              <strong>+38% trámites en línea</strong>
+              <small>Comparado con 2025</small>
+            </span>
+          </div>
+
+          <div class="panel panel-main">
+            <div class="panel-head">
+              <span>Panel de innovación</span>
+              <span class="badge">En vivo</span>
+            </div>
+            <div class="metric">84<small>/100</small></div>
+            <p style="font-size:.82rem;color:var(--muted)">Índice de gobierno digital municipal</p>
+            <div class="bars">
+              <div class="bar-row"><span>Transparencia <b>92%</b></span><div class="bar"><i style="width:92%"></i></div></div>
+              <div class="bar-row"><span>Servicios en línea <b>76%</b></span><div class="bar"><i style="width:76%"></i></div></div>
+              <div class="bar-row"><span>Participación <b>68%</b></span><div class="bar"><i style="width:68%"></i></div></div>
+            </div>
+          </div>
+
+          <div class="panel-float float-b">
+            <span class="icon-chip">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3.2 8.4-8 9-4.8-.6-8-4.5-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <span>
+              <strong>Datos abiertos</strong>
+              <small>12 conjuntos publicados</small>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <div class="stats">
+      <div class="wrap stats-grid">
+        <div class="stat"><strong>12</strong><span>Programas activos</span></div>
+        <div class="stat"><strong>45k</strong><span>Ciudadanos atendidos</span></div>
+        <div class="stat"><strong>8</strong><span>Dependencias conectadas</span></div>
+        <div class="stat"><strong>3</strong><span>Laboratorios de innovación</span></div>
+      </div>
+    </div>
+
+    <!-- ================= PROGRAMAS ================= -->
+    <section id="programas">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">Qué hacemos</span>
+            <h2>Cuatro frentes para un gobierno más cercano</h2>
+          </div>
+          <p>De la digitalización de trámites a la apertura de datos: cada programa tiene metas medibles y resultados públicos.</p>
+        </div>
+
+        <div class="cards-4">
+          <a class="card reveal" href="#">
+            <span class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/><path d="M7 9h6M7 12h4"/></svg>
+            </span>
+            <h3>Gobierno digital</h3>
+            <p>Trámites y servicios en línea, con identidad digital y seguimiento en tiempo real.</p>
+            <span class="more">Ver programa <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+
+          <a class="card reveal" href="#">
+            <span class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+            </span>
+            <h3>Datos abiertos</h3>
+            <p>Información pública en formatos reutilizables para investigación y soluciones cívicas.</p>
+            <span class="more">Explorar datos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+
+          <a class="card reveal" href="#">
+            <span class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3 11c.6.4 1 1 1 1.7V17h4v-1.3c0-.7.4-1.3 1-1.7A6 6 0 0 0 12 3z"/></svg>
+            </span>
+            <h3>Laboratorio de ideas</h3>
+            <p>Espacios para prototipar soluciones con universidades, colectivos y servidores públicos.</p>
+            <span class="more">Conocer el lab <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+
+          <a class="card reveal" href="#">
+            <span class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+            </span>
+            <h3>Participación ciudadana</h3>
+            <p>Presupuesto participativo, consultas y reportes ciudadanos con respuesta institucional.</p>
+            <span class="more">Participar <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROYECTOS ================= -->
+    <section class="projects" id="proyectos">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">En marcha</span>
+            <h2>Proyectos que ya están cambiando servicios</h2>
+          </div>
+          <p>Iniciativas con resultados medibles, documentadas y abiertas a revisión pública.</p>
+        </div>
+
+        <div class="cards-3">
+          <a class="project reveal" href="#">
+            <div class="thumb t1">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/><path d="M9 10h.01M15 10h.01"/></svg>
+            </div>
+            <div class="project-body">
+              <span class="tag">Servicios</span>
+              <h3>Ventanilla única digital</h3>
+              <p>Un solo portal para 24 trámites municipales, con pago en línea y seguimiento por folio.</p>
+            </div>
+          </a>
+
+          <a class="project reveal" href="#">
+            <div class="thumb t2">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div class="project-body">
+              <span class="tag">Datos</span>
+              <h3>Mapa de obra pública</h3>
+              <p>Visualización georreferenciada de obras, presupuesto ejercido y avance físico por colonia.</p>
+            </div>
+          </a>
+
+          <a class="project reveal" href="#">
+            <div class="thumb t3">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg>
+            </div>
+            <div class="project-body">
+              <span class="tag">Participación</span>
+              <h3>Reportes vecinales</h3>
+              <p>Canal para reportar baches, alumbrado y basura, con respuesta y cierre verificable.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section id="contacto">
+      <div class="wrap">
+        <div class="cta reveal">
+          <div>
+            <span class="kicker" style="color:var(--mint)">Participa</span>
+            <h2>¿Tienes una idea para mejorar Ecatepec?</h2>
+            <p>Recibimos propuestas de ciudadanía, universidades y empresas. Las mejores pasan al laboratorio de innovación.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-mint" href="#">
+              Enviar propuesta
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-outline-light" href="#">Ver convocatorias</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= NOTICIAS ================= -->
+    <section id="noticias" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">Actualidad</span>
+            <h2>Noticias y convocatorias</h2>
+          </div>
+          <p>Sigue los avances del programa y las fechas de participación.</p>
+        </div>
+
+        <div class="news-list">
+          <a class="news-item reveal" href="#">
+            <span class="news-date">18 NOV<span>2026</span></span>
+            <div>
+              <h3>Abre la convocatoria de presupuesto participativo 2027</h3>
+              <p>Las colonias podrán registrar proyectos hasta el 15 de diciembre.</p>
+            </div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+
+          <a class="news-item reveal" href="#">
+            <span class="news-date">05 NOV<span>2026</span></span>
+            <div>
+              <h3>Nuevo portal de datos abiertos con 12 conjuntos</h3>
+              <p>Incluye obra pública, presupuesto y resultados de programas sociales.</p>
+            </div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+
+          <a class="news-item reveal" href="#">
+            <span class="news-date">22 OCT<span>2026</span></span>
+            <div>
+              <h3>Laboratorio de innovación abre sus puertas</h3>
+              <p>Espacio de coworking y prototipado para equipos ciudadanos.</p>
+            </div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#inicio">
+            <span class="brand-mark" aria-hidden="true">IG</span>
+            <span class="brand-text">
+              <strong>Innovación Gubernamental</strong>
+              <span>Ecatepec de Morelos</span>
+            </span>
+          </a>
+          <p class="about">Tecnología pública al servicio de la gente. Un gobierno más abierto, eficiente y cercano.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Programas</h4>
+          <ul>
+            <li><a href="#programas">Gobierno digital</a></li>
+            <li><a href="#programas">Datos abiertos</a></li>
+            <li><a href="#programas">Laboratorio de ideas</a></li>
+            <li><a href="#programas">Participación</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="#noticias">Noticias</a></li>
+            <li><a href="#">Convocatorias</a></li>
+            <li><a href="#">Transparencia</a></li>
+            <li><a href="#">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:innovacion@ecatepec.gob.mx">innovacion@ecatepec.gob.mx</a></li>
+            <li><a href="tel:+525555555555">55 5555 5555</a></li>
+            <li><a href="#">Palacio Municipal, Ecatepec</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Gobierno de Ecatepec · Innovación Gubernamental</span>
+        <span>Mockup de diseño · v1</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    const toggle = document.getElementById('navToggle');
+
+    toggle.addEventListener('click', () => {
+      const open = header.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    });
+
+    document.querySelectorAll('#navLinks a').forEach((link) => {
+      link.addEventListener('click', () => {
+        header.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
