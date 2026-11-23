@@ -94,7 +94,8 @@
           </div>
           ============================================================ -->
 
-          <!-- El playlist de "subidas" del canal siempre abre en el video más reciente -->
+          <!-- El playlist de "subidas" del canal siempre abre en el video más reciente.
+               YouTube requiere referrer: servir por http://localhost (no file://). -->
           <div class="panel panel-main panel-video">
             <div class="panel-head">
               <span>Último video</span>
@@ -102,7 +103,9 @@
             </div>
             <div class="video-frame">
               <iframe
-                src="https://www.youtube-nocookie.com/embed?listType=playlist&list=UUJFhkzqGsmQsti4ICnXHeGg&rel=0&playsinline=1"
+                src="https://www.youtube.com/embed/videoseries?list=UUJFhkzqGsmQsti4ICnXHeGg&autoplay=1&mute=1&rel=0&playsinline=1"
+                width="560"
+                height="315"
                 title="Último video de H. Ayuntamiento de Ecatepec en YouTube"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
@@ -387,6 +390,12 @@
   <script async src="https://www.tiktok.com/embed.js"></script>
 
   <script>
+    // YouTube usa este parámetro para validar el origen del embed.
+    const ytFrame = document.querySelector('.video-frame iframe');
+    if (ytFrame && location.protocol.startsWith('http')) {
+      ytFrame.src += `&origin=${encodeURIComponent(location.origin)}`;
+    }
+
     const header = document.getElementById('header');
     const toggle = document.getElementById('navToggle');
 
