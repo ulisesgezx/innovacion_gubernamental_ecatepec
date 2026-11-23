@@ -606,6 +606,94 @@ section { padding: clamp(3.5rem, 7vw, 6rem) 0; }
 .news-item p { font-size: 0.85rem; color: var(--muted); }
 .news-item > svg { color: var(--muted); }
 
+/* ============ TIKTOK ============ */
+.tiktok-section {
+  background: #fff;
+  border-top: 1px solid var(--line);
+}
+
+.tiktok-frame {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background:
+    radial-gradient(900px 320px at 90% -20%, rgba(217, 164, 65, 0.18), transparent 60%),
+    radial-gradient(700px 300px at 0% 120%, rgba(159, 34, 65, 0.2), transparent 60%),
+    var(--plum);
+  border-radius: 20px;
+  padding: clamp(0.4rem, 1vw, 0.65rem);
+  box-shadow: var(--shadow);
+}
+
+.tiktok-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tiktok-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.tiktok-handle svg { color: var(--wine); }
+
+.tiktok-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7a5a12;
+  background: rgba(217, 164, 65, 0.18);
+  border: 1px solid rgba(217, 164, 65, 0.35);
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+}
+
+/* El widget oficial de TikTok rellena el blockquote con el feed de videos */
+.tiktok-embed,
+.tiktok-embed > section {
+  position: relative;
+  z-index: 1;
+  margin: 0 !important;
+}
+
+/* A todo el ancho: más videos visibles en PC y 2-3 en móvil */
+.tiktok-embed {
+  display: block;
+  width: 100%;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.tiktok-embed > section {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+}
+.tiktok-embed > section a {
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-decoration: none;
+}
+.tiktok-fallback { opacity: 0.75; }
+
+.tiktok-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 /* ============ FOOTER ============ */
 .site-footer {
   background: var(--plum);
