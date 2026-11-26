@@ -41,15 +41,16 @@ El sitio integra contenidos de distintos medios —incluidas redes sociales como
 | 🧩 **Programas** | Gobierno digital, datos abiertos, laboratorio de ideas y participación ciudadana. |
 | 🚀 **Proyectos** | Iniciativas en marcha con resultados medibles. |
 | 📰 **Noticias** | Convocatorias y avances del programa. |
-| 📱 **Redes sociales** | Contenido de TikTok y Facebook integrado al sitio. |
+| 📱 **Redes sociales** | Página de enlaces (linktree) con Facebook, TikTok y YouTube en `redes.html`. |
 | 📬 **Contacto** | Medios oficiales de atención ciudadana. |
 
 ## 📱 Integración de redes sociales
 
 | Plataforma | Uso dentro del sitio | Estado |
 | --- | --- | --- |
-| **TikTok** | Difusión de videos cortos y campañas de la dependencia. | 🔄 Planeado |
-| **Facebook** | Publicaciones, transmisiones y avisos oficiales. | 🔄 Planeado |
+| **TikTok** | Videos y campañas (`@sigecatepec`); feed integrado en el sitio. | ✅ Enlace en `redes.html` |
+| **Facebook** | Publicaciones, transmisiones y avisos oficiales. | 🟡 URL por definir |
+| **YouTube** | Transmisiones y videos institucionales. | 🟡 URL por definir |
 
 **Enfoque técnico previsto**
 
@@ -73,6 +74,8 @@ innovacion_gubernamental_ecatepec/
 ├── mockup/                  # Prototipo navegable del sitio
 │   ├── index.html           # Estructura y contenido
 │   ├── styles.css           # Sistema de diseño (tokens de color, tipografía)
+│   ├── redes.html           # Linktree: Facebook, TikTok y YouTube
+│   ├── redes.css            # Estilos de la página de redes
 │   └── assets/              # Logotipos e imágenes
 ├── public/                  # Recursos estáticos de Angular
 ├── src/
@@ -118,7 +121,7 @@ Abre `http://localhost:4200/`. La aplicación se recarga automáticamente al gua
 
 ### Ver el mockup
 
-No necesita instalación: abre `mockup/index.html` directamente en el navegador.
+No necesita instalación: abre `mockup/index.html` directamente en el navegador. La página de redes (linktree) está en `mockup/redes.html`.
 
 ### Compilar para producción
 
