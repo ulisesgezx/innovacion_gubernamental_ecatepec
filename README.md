@@ -49,8 +49,8 @@ El sitio integra contenidos de distintos medios —incluidas redes sociales como
 | Plataforma | Uso dentro del sitio | Estado |
 | --- | --- | --- |
 | **TikTok** | Videos y campañas (`@sigecatepec`); feed integrado en el sitio. | ✅ Enlace en `redes.html` |
-| **Facebook** | Publicaciones, transmisiones y avisos oficiales. | 🟡 URL por definir |
-| **YouTube** | Transmisiones y videos institucionales. | 🟡 URL por definir |
+| **Facebook** | Publicaciones, transmisiones y avisos oficiales. | ✅ Enlace en `redes.html` |
+| **YouTube** | Transmisiones y videos institucionales. | ✅ Enlace en `redes.html` |
 
 **Enfoque técnico previsto**
 
