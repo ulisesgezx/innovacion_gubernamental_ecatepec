@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Redes oficiales del área de Innovación Gubernamental del Palacio de Ecatepec, San Cristóbal." />
+  <title>Redes · Innovación Gubernamental Ecatepec</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="assets/logo-ecatepec.png" />
+  <link rel="stylesheet" href="redes.css" />
+</head>
+
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <!-- ============ BARRA DE NAVEGACIÓN ============ -->
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a class="navbar__brand" href="index.html">
+        <img src="assets/logo-ecatepec.png" alt="" />
+        <span>Innovación Gubernamental</span>
+      </a>
+      <a class="navbar__back" href="index.html">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        Volver al sitio
+      </a>
+    </div>
+  </nav>
+
+  <main id="main" class="container">
+    <!-- ============ PERFIL ============ -->
+    <div class="profile">
+      <div class="avatar">
+        <img src="assets/logo-ecatepec.png" alt="Logo del Gobierno de Ecatepec" />
+      </div>
+      <h1>Innovación Gubernamental</h1>
+      <p class="location">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ecatepec de Morelos
+      </p>
+      <p class="role">Palacio Municipal · San Cristóbal</p>
+      <p class="bio">Programas, convocatorias y videos de la dependencia. Síguenos para estar al tanto.</p>
+    </div>
+
+    <!-- ============ ENLACES ============ -->
+    <div class="tiles">
+      <!-- TODO: reemplazar con la URL oficial de la página de Facebook -->
+      <div class="tile" id="facebook">
+        <a class="tile__main" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+          <span class="tile__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg>
+          </span>
+          <span class="tile__copy">
+            <strong>Facebook</strong>
+            <small>Avisos y convocatorias oficiales</small>
+          </span>
+        </a>
+        <button class="tile__share" type="button" data-share="https://www.facebook.com/" aria-label="Copiar enlace de Facebook" title="Copiar enlace">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3A5 5 0 0 0 13 3.5l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3A5 5 0 0 0 11 20.5l1.7-1.7"/></svg>
+        </button>
+      </div>
+
+      <div class="tile" id="tiktok">
+        <a class="tile__main" href="https://www.tiktok.com/@sigecatepec" target="_blank" rel="noopener noreferrer">
+          <span class="tile__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 3 3 0 0 1 .88.13V9.4a7 7 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a5 5 0 0 1-1-.1z"/></svg>
+          </span>
+          <span class="tile__copy">
+            <strong>TikTok</strong>
+            <small>@sigecatepec · videos y campañas</small>
+          </span>
+        </a>
+        <button class="tile__share" type="button" data-share="https://www.tiktok.com/@sigecatepec" aria-label="Copiar enlace de TikTok" title="Copiar enlace">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3A5 5 0 0 0 13 3.5l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3A5 5 0 0 0 11 20.5l1.7-1.7"/></svg>
+        </button>
+      </div>
+
+      <!-- TODO: reemplazar con la URL oficial del canal de YouTube -->
+      <div class="tile" id="youtube">
+        <a class="tile__main" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+          <span class="tile__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg>
+          </span>
+          <span class="tile__copy">
+            <strong>YouTube</strong>
+            <small>Transmisiones y videos institucionales</small>
+          </span>
+        </a>
+        <button class="tile__share" type="button" data-share="https://www.youtube.com/" aria-label="Copiar enlace de YouTube" title="Copiar enlace">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3A5 5 0 0 0 13 3.5l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3A5 5 0 0 0 11 20.5l1.7-1.7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <p class="hint">Toca el icono de enlace para copiar la dirección.</p>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Gobierno de Ecatepec · Innovación Gubernamental</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const toast = document.getElementById('toast');
+    let timer;
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(timer);
+      timer = setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+
+    document.querySelectorAll('.tile__share').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const url = button.dataset.share;
+        try {
+          await navigator.clipboard.writeText(url);
+          showToast('Enlace copiado');
+        } catch {
+          window.prompt('Copia este enlace:', url);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
