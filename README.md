@@ -41,7 +41,7 @@ El sitio integra contenidos de distintos medios —incluidas redes sociales como
 | 🧩 **Programas** | Gobierno digital, datos abiertos, laboratorio de ideas y participación ciudadana. |
 | 🚀 **Proyectos** | Iniciativas en marcha con resultados medibles. |
 | 📰 **Noticias** | Convocatorias y avances del programa. |
-| 📱 **Redes sociales** | Página de enlaces (linktree) con Facebook, TikTok y YouTube en `redes.html`. |
+| 📱 **Redes sociales** | Página de enlaces en `redes.html`: linktree de la presidenta, Facebook, TikTok y YouTube. |
 | 📬 **Contacto** | Medios oficiales de atención ciudadana. |
 
 ## 📱 Integración de redes sociales
